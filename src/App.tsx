@@ -80,7 +80,7 @@ function extractJSON(text) {
 async function callClaude(messages, system, maxTokens = 2000) {
   const body = { model: CLAUDE_MODEL, max_tokens: maxTokens, messages };
   if (system) body.system = system;
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
+  const res = await fetch('/api/claude', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
